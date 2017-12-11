@@ -1,0 +1,11 @@
+server:
+  port: 8082
+spring:
+  data:
+    mongodb:
+      uri: mongodb:localhost:springcloud
+logging:
+  level:
+    root: INFO
+    org.springframework: INFO
+    in.clouthink: DEBUG
