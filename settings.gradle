@@ -1,2 +1,3 @@
 rootProject.name = 'spring-cloud-boilerplate'
 include "eureka"
+//include "zuul"

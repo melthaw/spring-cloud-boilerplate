@@ -1,15 +1,18 @@
 ext {
+    springBootVersion = "1.3.5.RELEASE"
+    springCloudVersion = "Brixton.RELEASE"
+
     libs = [
             commons          : [
-                    "commons-codec:commons-codec:${version_commons_codec}",
+                    "commons-codec:commons-codec:1.10",
                     "org.apache.commons:commons-lang3:3.4",
                     "commons-io:commons-io:2.5",
-                    "com.google.guava:guava:${version_google_guava}",
-                    "com.google.code.gson:gson:${version_google_gson}",
+                    "com.google.guava:guava:18.0",
+                    "com.google.code.gson:gson:2.2.4",
                     "cz.mallat.uasparser:uasparser:0.6.2",
                     "com.belerweb:pinyin4j:2.5.0",
                     "org.im4java:im4java:1.4.0",
-                    "org.hibernate:hibernate-validator:${version_hibernate_validator}",
+                    "org.hibernate:hibernate-validator:5.1.3.Final",
                     "org.apache.httpcomponents:httpclient:4.3.6"
             ],
             daas             : [
@@ -35,47 +38,47 @@ ext {
                     "com.aliyun:aliyun-java-sdk-sms:3.0.0-rc1"
             ],
             springBoot       : [
-                    "org.springframework.boot:spring-boot-starter:${version_spring_boot}",
-                    "org.springframework.boot:spring-boot-starter-web:${version_spring_boot}",
-                    "org.springframework.boot:spring-boot-starter-mail:${version_spring_boot}",
-                    "org.springframework.boot:spring-boot-starter-aop:${version_spring_boot}",
-                    "org.springframework.boot:spring-boot-devtools:${version_spring_boot}"
+                    "org.springframework.boot:spring-boot-starter:${springBootVersion}",
+                    "org.springframework.boot:spring-boot-starter-web:${springBootVersion}",
+                    "org.springframework.boot:spring-boot-starter-mail:${springBootVersion}",
+                    "org.springframework.boot:spring-boot-starter-aop:${springBootVersion}",
+                    "org.springframework.boot:spring-boot-devtools:${springBootVersion}"
             ],
             springThymeleaf  : [
-                    "org.springframework.boot:spring-boot-starter-thymeleaf:${version_spring_boot}",
+                    "org.springframework.boot:spring-boot-starter-thymeleaf:${springBootVersion}",
                     "org.thymeleaf.extras:thymeleaf-extras-springsecurity3:2.1.2.RELEASE"
             ],
             springDataMongodb: [
-                    "org.springframework.boot:spring-boot-starter-data-mongodb:${version_spring_boot}",
+                    "org.springframework.boot:spring-boot-starter-data-mongodb:${springBootVersion}",
             ],
             springSecurity   : [
-                    "org.springframework.boot:spring-boot-starter-security:${version_spring_boot}"
+                    "org.springframework.boot:spring-boot-starter-security:${springBootVersion}"
             ],
             springOAuth2     : [
                     "org.springframework.security.oauth:spring-security-oauth2:2.0.7.RELEASE"
             ],
             springRedis      : [
-                    "org.springframework.boot:spring-boot-starter-redis:${version_spring_boot}"
+                    "org.springframework.boot:spring-boot-starter-redis:${springBootVersion}"
             ],
             springBootTomcat : [
-                    "org.springframework.boot:spring-boot-starter-tomcat:${version_spring_boot}"
+                    "org.springframework.boot:spring-boot-starter-tomcat:${springBootVersion}"
             ],
             jackson2         : [
-                    "com.fasterxml.jackson.core:jackson-annotations:${version_fasterxml_jackson_annotations}",
-                    "com.fasterxml.jackson.core:jackson-core:${version_fasterxml_jackson_core}",
-                    "com.fasterxml.jackson.core:jackson-databind:${version_fasterxml_jackson_databind}"
+                    "com.fasterxml.jackson.core:jackson-annotations:2.4.0",
+                    "com.fasterxml.jackson.core:jackson-core:2.4.6",
+                    "com.fasterxml.jackson.core:jackson-databind:2.4.6"
             ],
             springfox        : [
-                    "io.springfox:springfox-swagger2:${version_springfox_swagger2}",
-                    "io.springfox:springfox-swagger-ui:${version_springfox_swagger_ui}"
+                    "io.springfox:springfox-swagger2:2.2.2",
+                    "io.springfox:springfox-swagger-ui:2.2.2"
             ],
             swagger2         : [
-                    "io.swagger:swagger-annotations:${version_io_swagger_swagger}"
+                    "io.swagger:swagger-annotations:1.5.2"
             ],
             test             : [
-                    "junit:junit:${version_junit}",
-                    "org.springframework.boot:spring-boot-starter-test:${version_spring_boot}",
-                    "org.springframework.security:spring-security-test:${version_spring_security}",
+                    "junit:junit:4.11",
+                    "org.springframework.boot:spring-boot-starter-test:${springBootVersion}",
+                    "org.springframework.security:spring-security-test:4.0.1.RELEASE",
                     "com.github.fakemongo:fongo:1.6.5"
             ]
     ]

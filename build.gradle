@@ -1,29 +1,27 @@
-apply from: "$rootDir/dependencies.gradle"
-apply plugin: 'idea'
+apply from: "$rootDir/gradle/dependencies.gradle"
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.10'
+    gradleVersion = '2.14.1'
 }
 
 allprojects {
+    apply plugin: 'idea'
 
     repositories {
-        mavenLocal()
         mavenCentral()
-        maven { url "http://repo.spring.io/release" }
-        maven { url "http://repo.spring.io/snapshot" }
-        maven { url "http://repo.spring.io/milestone" }
     }
 
-    buildscript {
-        repositories {
-            mavenLocal()
-            mavenCentral()
-            maven { url "http://repo.spring.io/release" }
-            maven { url "http://repo.spring.io/snapshot" }
-            maven { url "http://repo.spring.io/milestone" }
-        }
-    }
+//    buildscript {
+//        repositories {
+//            mavenCentral()
+//            maven { url "https://repo.spring.io/plugins-release" }
+//            maven { url "https://repo.spring.io/libs-release" }
+//        }
+//
+//        dependencies {
+//            classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+//        }
+//    }
 
     tasks.withType(JavaCompile) {
         options.encoding = "UTF-8"
@@ -32,12 +30,21 @@ allprojects {
 }
 
 subprojects {
+
     apply plugin: 'java'
-    apply plugin: 'base'
-    apply plugin: 'eclipse'
-    apply plugin: 'idea'
 
     sourceCompatibility = JavaVersion.VERSION_1_8
+
+    repositories {
+        mavenCentral()
+    }
+
+//    dependencyManagement {
+//        imports {
+//            mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+//            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+//        }
+//    }
 
     jar {
         baseName = project['artifactId']
