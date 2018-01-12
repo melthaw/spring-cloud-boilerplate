@@ -16,23 +16,18 @@ dependencyManagement {
     }
 }
 
-apply plugin: 'idea'
-apply plugin: 'spring-boot'
+apply plugin: 'org.springframework.boot'
 
 dependencies {
-    compile "org.springframework.boot:spring-boot-devtools"
+//    compile "org.springframework.boot:spring-boot-devtools"
 
-    compile "org.springframework.boot:spring-boot-starter"
-    compile "org.springframework.boot:spring-boot-starter-web"
-    compile "org.springframework.boot:spring-boot-starter-jetty"
-    compile "org.springframework.boot:spring-boot-starter-actuator"
-    compile "org.springframework.boot:spring-boot-starter-security"
+//    compile "org.springframework.boot:spring-boot-starter"
+//    compile "org.springframework.boot:spring-boot-starter-web"
+//    compile "org.springframework.boot:spring-boot-starter-jetty"
+//    compile "org.springframework.boot:spring-boot-starter-actuator"
+//    compile "org.springframework.boot:spring-boot-starter-security"
 
     compile "org.springframework.cloud:spring-cloud-starter-eureka-server"
 
     testCompile("org.springframework.boot:spring-boot-starter-test")
-}
-
-configurations {
-    compile.exclude module: 'spring-boot-starter-tomcat'
 }

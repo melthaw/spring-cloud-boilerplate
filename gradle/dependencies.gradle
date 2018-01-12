@@ -1,6 +1,6 @@
 ext {
-    springBootVersion = "1.3.5.RELEASE"
-    springCloudVersion = "Brixton.RELEASE"
+    springBootVersion = "1.5.4.RELEASE"
+    springCloudVersion = "Dalston.SR1"
 
     libs = [
             commons          : [
