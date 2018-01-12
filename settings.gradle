@@ -1,3 +1,4 @@
-rootProject.name = 'spring-cloud-boilerplate'
-include "eureka"
-include "zuul"
+rootProject.name = 'io.picos.scb'
+include "discovery"
+include "gateway"
+include "security"
