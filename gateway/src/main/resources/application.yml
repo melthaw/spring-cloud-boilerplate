@@ -1,11 +1,22 @@
 server:
-  port: 8084
+  port: 10000
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
 
 eureka:
   instance:
     hostname: localhost
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    registerWithEureka: true
+    fetchRegistry: true
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+sidecar:
+  port: 80
