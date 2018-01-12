@@ -10,17 +10,14 @@ allprojects {
         mavenCentral()
     }
 
-//    buildscript {
-//        repositories {
-//            mavenCentral()
-//            maven { url "https://repo.spring.io/plugins-release" }
-//            maven { url "https://repo.spring.io/libs-release" }
-//        }
-//
-//        dependencies {
-//            classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-//        }
-//    }
+    buildscript {
+        repositories {
+            mavenCentral()
+        }
+        dependencies {
+            classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+        }
+    }
 
     tasks.withType(JavaCompile) {
         options.encoding = "UTF-8"
@@ -37,13 +34,6 @@ subprojects {
     repositories {
         mavenCentral()
     }
-
-//    dependencyManagement {
-//        imports {
-//            mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
-//            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-//        }
-//    }
 
     jar {
         baseName = project['artifactId']

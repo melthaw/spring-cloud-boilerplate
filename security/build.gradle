@@ -19,8 +19,9 @@ dependencyManagement {
 apply plugin: 'org.springframework.boot'
 
 dependencies {
-    compile('org.springframework.boot:spring-cloud-starter')
-    compile('org.springframework.boot:spring-cloud-starter-security')
+    compile "org.springframework.boot:spring-boot-starter"
+    compile "org.springframework.boot:spring-boot-starter-web"
+    compile "org.springframework.boot:spring-boot-starter-security"
 
-    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile "org.springframework.boot:spring-boot-starter-test"
 }
