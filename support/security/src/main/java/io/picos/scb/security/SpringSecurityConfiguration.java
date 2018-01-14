@@ -8,7 +8,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
  * Created by dz on 2018/1/12.
  */
 @Configuration
-public class SecurityModuleConfiguration extends WebSecurityConfigurerAdapter {
+public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {

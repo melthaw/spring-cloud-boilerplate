@@ -13,4 +13,10 @@ public class SampleRestController {
         return "Welcome to spring cloud sample.";
     }
 
+    @RequestMapping("/hello")
+    @ResponseBody
+    public String hello() {
+        return "io.picos.scb:sample:0.1.0-SNAPSHOT";
+    }
+
 }
