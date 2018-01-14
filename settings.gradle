@@ -1,4 +1,6 @@
 rootProject.name = 'io.picos.scb'
+include "support/cors"
+include "support/security"
 include "discovery"
 include "gateway"
-include "security"
+//include "sample"

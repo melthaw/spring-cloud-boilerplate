@@ -1,0 +1,17 @@
+version: '2'
+services:
+  discovery:
+    container_name: discovery
+    build: discovery
+    depends_on:
+      - discovery
+  gateway:
+    container_name: gateway
+    build: gateway
+    depends_on:
+      - discovery
+  sample:
+    container_name: sample
+    build: sample
+    depends_on:
+      - discovery

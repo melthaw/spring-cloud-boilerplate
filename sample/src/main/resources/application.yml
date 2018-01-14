@@ -1,0 +1,20 @@
+app:
+  name: scb-api
+  description: spring cloud boilerplate api provider
+
+server:
+  port: 8080
+  address: 0.0.0.0
+  session:
+    timeout: 360000
+
+####################### eureka configuration #######################
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+#    instance-id: ${app.name}:${spring.application.name}:${server.port}
+  client:
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
