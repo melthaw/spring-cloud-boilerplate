@@ -2,6 +2,16 @@ app:
   name: scb-api
   description: spring cloud boilerplate api provider
 
+io:
+  picos:
+    scb:
+      support:
+        cors:
+           allowCredentials: true
+           allowOrigin: "*"
+           allowHeader: "*"
+           allowMethod: "*"
+
 server:
   port: 8080
   address: 0.0.0.0
