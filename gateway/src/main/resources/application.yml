@@ -12,11 +12,22 @@ endpoints:
 eureka:
   instance:
     hostname: localhost
+    prefer-ip-address: true
+#    instance-id: ${app.name}:${spring.application.name}:${server.port}
   client:
-    registerWithEureka: true
+    registerWithEureka: false
     fetchRegistry: true
     serviceUrl:
-       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+       defaultZone: http://${eureka.instance.hostname}:8761/eureka/
 
-sidecar:
-  port: 80
+zuul:
+  routes:
+    resource:
+      path: /iamsvc/**
+      url: ${ZUUL_ROUTES_IAMSVC_URL}
+#
+#sidecar:
+#  port: 80
+
+security:
+  sessions: NEVER
