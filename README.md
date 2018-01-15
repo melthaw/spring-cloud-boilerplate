@@ -13,7 +13,7 @@ gateway | zuul | Dalston.SR1
 
 > Please make sure Java , Gradle & Docker are ready on your dev machine.
 
-| version
+env | version
 ---|---
 Java | 1.8.x
 Gradle | 2.14.x
