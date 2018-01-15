@@ -1,6 +1,16 @@
 server:
   port: 10000
 
+io:
+  picos:
+    scb:
+      support:
+        cors:
+           allowCredentials: true
+           allowOrigin: "*"
+           allowHeader: "*"
+           allowMethod: "*"
+
 endpoints:
   restart:
     enabled: true
@@ -11,23 +21,12 @@ endpoints:
 
 eureka:
   instance:
-    hostname: localhost
-    prefer-ip-address: true
-#    instance-id: ${app.name}:${spring.application.name}:${server.port}
+    hostname: ${EUREKA_INSTANCE_HOST:localhost}
+    non-secure-port: ${EUREKA_INSTANCE_PORT:10000}
+    prefer-ip-address: false
+#    instance-id: ${spring.application.name}:${eureka.instance.hostname}:${eureka.instance.non-secure-port}:${random.value}
   client:
     registerWithEureka: false
     fetchRegistry: true
     serviceUrl:
-       defaultZone: http://${eureka.instance.hostname}:8761/eureka/
-
-zuul:
-  routes:
-    resource:
-      path: /iamsvc/**
-      url: ${ZUUL_ROUTES_IAMSVC_URL}
-#
-#sidecar:
-#  port: 80
-
-security:
-  sessions: NEVER
+       defaultZone: ${EUREKA_SERVICE_URL:'http://localhost:8761/eureka/'}

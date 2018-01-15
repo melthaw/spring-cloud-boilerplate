@@ -1,16 +1,6 @@
 app:
-  name: scb-api
-  description: spring cloud boilerplate api provider
-
-io:
-  picos:
-    scb:
-      support:
-        cors:
-           allowCredentials: true
-           allowOrigin: "*"
-           allowHeader: "*"
-           allowMethod: "*"
+  name: sample
+  description: spring cloud boilerplate api sample
 
 server:
   port: 8080
@@ -21,10 +11,16 @@ server:
 ####################### eureka configuration #######################
 eureka:
   instance:
-    hostname: localhost
-    prefer-ip-address: true
-#    instance-id: ${app.name}:${spring.application.name}:${server.port}
+    hostname: ${EUREKA_INSTANCE_HOST:localhost}
+    non-secure-port: ${EUREKA_INSTANCE_PORT:8080}
+    prefer-ip-address: false
+#    statusPageUrlPath: ${server.servletPath}/info
+#    healthCheckUrlPath: ${server.servletPath}/health
+#    statusPageUrl: https://${eureka.instance.hostname}/info
+#    healthCheckUrl: https://${eureka.instance.hostname}/health
+#    homePageUrl: https://${eureka.instance.hostname}/
+    instance-id: ${spring.application.name}:${eureka.instance.hostname}:${eureka.instance.non-secure-port}:${random.value}
   client:
     registerWithEureka: true
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+      defaultZone: ${EUREKA_SERVICE_URL:'http://localhost:8761/eureka/'}

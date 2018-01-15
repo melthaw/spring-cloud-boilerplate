@@ -2,16 +2,24 @@ version: '2'
 services:
   discovery:
     container_name: discovery
-    build: discovery
-    depends_on:
-      - discovery
+    build:
+      context: discovery
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8761:8761"
+    environment:
+      JAVA_OPTS: -Xmx1024m -Xms256m
   gateway:
     container_name: gateway
-    build: gateway
+    build:
+      context: gateway
+      dockerfile: docker/Dockerfile
+    ports:
+      - "10000:10000"
     depends_on:
       - discovery
-  sample:
-    container_name: sample
-    build: sample
-    depends_on:
-      - discovery
+    environment:
+      EUREKA_INSTANCE_HOST: ${DEVOPS_HOST}
+      EUREKA_INSTANCE_PORT: "10000"
+      EUREKA_SERVICE_URL: ${EUREKA_SERVICE_URL}
+      JAVA_OPTS: -Xmx1024m -Xms256m
