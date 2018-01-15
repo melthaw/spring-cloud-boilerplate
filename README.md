@@ -2,12 +2,23 @@
 
 The boilerplate for spring cloud with following feature enabled
 
-* eureka
-* zuul
+feature  |  implementation | version
+---|---|---
+discovery | eureka | Dalston.SR1
+gateway | zuul | Dalston.SR1
+
+> Please check out gradle/dependencies.gradle
 
 # Get Started
 
 > Please make sure Java , Gradle & Docker are ready on your dev machine.
+
+| version
+---|---
+Java | 1.8.x
+Gradle | 2.14.x
+Docker | 17.x
+Docker Compose | 1.16.*
 
 ## Build
 
